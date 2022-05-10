@@ -1,0 +1,167 @@
+﻿@page
+@model BelPack.Pages.ContactsModel
+@{
+    ViewData["Title"] = "Контакты";
+}
+
+<style>
+    .iti-flag {
+        background-image: url(images/flags.png);
+    }
+
+    #note {
+        min-height: 200px;
+    }
+</style>
+
+
+<h2>Контакты</h2>
+
+<div class="map-wrapper mt-4">
+    <img class="img-fluid" src="/images/map.PNG" alt="местоположение офиса" />
+</div>
+
+<div class="contact-elems mt-4">
+
+    <div class="contact-elem me-4 mb-4">
+        <h5 class="mt-3">телефон</h5>
+        <div class="mt-2 contact-icon contact-icon-phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+            </svg>
+        </div>
+        <div class="mt-3">
+            <h6>+375 (29) 111-22-33</h6>
+            <h6>+375 (29) 111-22-33</h6>
+        </div>
+    </div>
+
+    <div class="contact-elem me-4 mb-4">
+        <h5 class="mt-3">почта</h5>
+        <div class="mt-2 contact-icon contact-icon-email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+            </svg>
+        </div>
+        <div class="mt-3">
+            <h6>examplemail@mail.com</h6>
+            <h6>example@gmail.com</h6>
+        </div>
+    </div>
+
+    <div class="contact-elem me-4">
+        <h5 class="mt-3">адрес</h5>
+        <div class="mt-2 contact-icon contact-icon-address">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg>
+        </div>
+        <div class="mt-3">
+            <h6>ул. Бирюзова, 10</h6>
+        </div>
+    </div>
+
+</div>
+
+<div class="mt-5">
+    @using (Html.BeginForm("SendMail", "Mail", FormMethod.Post, htmlAttributes: new { id="contact-form" }))
+    {
+        <div class="form-contact mb-5 ms-auto me-auto" id="form-contact">
+            <div class="contact-top">
+                <h3>Обратная связь</h3>
+            </div>
+
+            <div class="w-100" id="form-fields">
+                <div class="mt-2">
+                    <label for="name" class="form-label">Ваше имя</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                    <div id="name-invalid" class="invalid-feedback"></div>
+                </div>
+
+                <div class="mt-3">
+                    <label for="phone-inp" class="form-label">Телефон</label><br />
+                    <input id="phone-inp" type="tel" class="form-control" />
+                    <div id="phone-invalid" class="invalid-feedback"></div>
+                </div>
+
+                <div class="mt-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" />
+                    <div id="email-invalid" class="invalid-feedback"></div>
+                </div>
+
+                <div class="mt-3">
+                    <label for="note" class="form-label">Комментарий</label>
+                    <textarea id="note" name="note" class="form-control"></textarea>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary btn-lg form-control" id="submit-btn">Отправить</button>
+                </div>
+            </div>
+
+            <div class="w-100 d-flex justify-content-center">
+                <div class="d-none alert alert-primary" id="form-confirmed" role="alert">
+                    Ваша заявка отправлена
+                </div>
+            </div>
+            
+        </div>
+
+       
+    }
+
+    
+</div>
+
+<script src="~/js/intlTelInput.min.js"></script>
+<script src="~/js/validateContactForm.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let head = document.getElementsByTagName("head")[0];
+
+        let meta = document.createElement("meta");
+        meta.setAttribute("name", "description");
+        meta.setAttribute("content", "Контакты компании, обратная связь");
+
+        head.appendChild(meta);
+
+        let link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("href", "/css/intlTelInput.css");
+
+        head.appendChild(link);
+
+        document.getElementById("contact-form").setAttribute("novalidate", "novalidate");
+        document.getElementById("submit-btn").addEventListener("click", onFormSubmit);
+      
+    });
+
+    const phone = document.getElementById("phone-inp");
+    const iti = window.intlTelInput(phone, {
+        preferredCountries: ["by", "ru", "de", "lv", "us"],
+        initialCountry: "by",
+        nationalMode: true,
+        hiddenInput: "phone",
+        utilsScript: "js/utils.js"
+    });
+    
+
+    function onFormSubmit(event) {
+        if (!validateForm()) {
+            event.preventDefault();
+            return;
+        }
+        document.getElementById("form-fields").classList.add("d-none");
+        document.getElementById("form-confirmed").classList.remove("d-none");
+        event.preventDefault();
+    }
+    
+</script>
+
+
+
+
+

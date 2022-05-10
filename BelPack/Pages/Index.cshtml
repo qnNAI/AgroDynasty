@@ -23,20 +23,29 @@
         background-color: black;
         opacity: 0.8;
         color: white;
-        text-align: center;
     }
 
-    .nav-link {
-        color: #bababa;
-    }
 </style>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <div style="height: 400px;"></div>
-    <div style="height: 400px;"></div>
-    <div style="height: 400px;"></div>
-    <div style="height: 400px;"></div>
-    <div style="height: 400px;"></div>
-    <div style="height: 400px;"></div>
 </div>
+
+<div style="height: 400px;"></div>
+<div style="height: 400px;"></div>
+<div style="height: 400px;"></div>
+<div style="height: 400px;"></div>
+<div style="height: 400px;"></div>
+<div style="height: 400px;"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("main-nav").classList.remove("bg-dark");
+
+        let meta = document.createElement("meta");
+        meta.setAttribute("name", "description");
+        meta.setAttribute("content", "Упаковочные материалы для сельского хозяйства");
+
+        document.getElementsByTagName("head")[0].appendChild(meta);
+    })
+</script>

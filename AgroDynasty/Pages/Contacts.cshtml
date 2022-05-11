@@ -21,16 +21,12 @@
     <img class="img-fluid" src="/images/map.PNG" alt="местоположение офиса" />
 </div>*@
 
-<div class="">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.08707279816!2d27.511147783784526!3d53.912428611507444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc55ceb84634b%3A0xae3e698a8f7f65df!2z0YPQuy4g0JHQuNGA0Y7Qt9C-0LLQsCAxMCwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1652295502590!5m2!1sru!2sby"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-</div>
 
 
-<div class="contact-elems mt-4">
 
-    <div class="contact-elem me-4 mb-4">
+<div class="contact-elems mt-5">
+
+    <div class="contact-elem me-4 mb-4 mt-4">
         <h5 class="mt-3">телефон</h5>
         <div class="mt-2 contact-icon contact-icon-phone">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
@@ -42,7 +38,7 @@
         </div>
     </div>
 
-    <div class="contact-elem me-4 mb-4">
+    <div class="contact-elem me-4 mb-4 mt-4">
         <h5 class="mt-3">почта</h5>
         <div class="mt-2 contact-icon contact-icon-email">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
@@ -54,7 +50,7 @@
         </div>
     </div>
 
-    <div class="contact-elem me-4">
+    <div class="contact-elem me-4 mb-4 mt-4">
         <h5 class="mt-3">адрес</h5>
         <div class="mt-2 contact-icon contact-icon-address">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
@@ -69,56 +65,57 @@
 
 </div>
 
-<div class="mt-5">
-    @using (Html.BeginForm("SendMail", "Mail", FormMethod.Post, htmlAttributes: new { id="contact-form" }))
-    {
-        <div class="form-contact mb-5 ms-auto me-auto" id="form-contact">
-            <div class="contact-top">
-                <h3>Обратная связь</h3>
+<div class="d-flex flex-wrap flex-row justify-content-around mt-4">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.08707279816!2d27.511147783784526!3d53.912428611507444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc55ceb84634b%3A0xae3e698a8f7f65df!2z0YPQuy4g0JHQuNGA0Y7Qt9C-0LLQsCAxMCwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1652295502590!5m2!1sru!2sby"
+            width="600" height="450" style="border:1px solid lightgray; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mb-4">
+    </iframe>
+    <div>
+        @using(Html.BeginForm("SendMail", "Mail", FormMethod.Post, htmlAttributes: new { id = "contact-form" })) {
+            <div class="form-contact mb-5 ms-auto me-auto" id="form-contact">
+                <div class="contact-top">
+                    <h3>Обратная связь</h3>
+                </div>
+
+                <div class="w-100" id="form-fields">
+                    <div class="mt-2">
+                        <label for="name" class="form-label">Ваше имя</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                        <div id="name-invalid" class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="phone-inp" class="form-label">Телефон</label><br />
+                        <input id="phone-inp" type="tel" class="form-control" />
+                        <div id="phone-invalid" class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" />
+                        <div id="email-invalid" class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="note" class="form-label">Комментарий</label>
+                        <textarea id="note" name="note" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg form-control" id="submit-btn">Отправить</button>
+                    </div>
+                </div>
+
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="d-none alert alert-primary" id="form-confirmed" role="alert">
+                        Ваша заявка отправлена
+                    </div>
+                </div>
+
             </div>
-
-            <div class="w-100" id="form-fields">
-                <div class="mt-2">
-                    <label for="name" class="form-label">Ваше имя</label>
-                    <input type="text" class="form-control" id="name" name="name">
-                    <div id="name-invalid" class="invalid-feedback"></div>
-                </div>
-
-                <div class="mt-3">
-                    <label for="phone-inp" class="form-label">Телефон</label><br />
-                    <input id="phone-inp" type="tel" class="form-control" />
-                    <div id="phone-invalid" class="invalid-feedback"></div>
-                </div>
-
-                <div class="mt-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" />
-                    <div id="email-invalid" class="invalid-feedback"></div>
-                </div>
-
-                <div class="mt-3">
-                    <label for="note" class="form-label">Комментарий</label>
-                    <textarea id="note" name="note" class="form-control"></textarea>
-                </div>
-
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary btn-lg form-control" id="submit-btn">Отправить</button>
-                </div>
-            </div>
-
-            <div class="w-100 d-flex justify-content-center">
-                <div class="d-none alert alert-primary" id="form-confirmed" role="alert">
-                    Ваша заявка отправлена
-                </div>
-            </div>
-            
-        </div>
-
-       
-    }
-
-    
+        }
+    </div>
 </div>
+
 
 <script src="~/js/intlTelInput.min.js"></script>
 <script src="~/js/validateContactForm.js"></script>

@@ -52,6 +52,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #1c2e59;
 }
 
 .contact-elem {
@@ -87,7 +88,7 @@ footer {
 }
 
 .form-contact {
-    max-width: 400px;
+    width: 370px;
     /* background: rgb(59,75,173);
     background: linear-gradient(86deg, rgba(59,75,173,1) 0%, rgba(0,12,117,1) 100%);*/
     background-color: #1c2e59;

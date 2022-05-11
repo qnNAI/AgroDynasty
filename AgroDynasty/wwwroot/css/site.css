@@ -34,7 +34,9 @@ body {
 
 footer {
     text-align: center;
+    color: #dff0f0;
     height: 70px;
+    background-color: #1c2e59;
 }
 
 .nav-link {
@@ -173,4 +175,8 @@ footer {
     .logo-wrapper {
         width: 90px;
     }
+}
+
+.map-req {
+    min-width: 60%;
 }

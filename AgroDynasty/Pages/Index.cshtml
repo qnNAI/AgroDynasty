@@ -25,10 +25,96 @@
         
     }
 
+    .slide1 {
+        background-image: url(images/slide1.jpg);
+    }
+
+    .slide2 {
+        background-image: url(images/slide2.jpg);
+    }
+
+    .slide {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 400px;
+        color: #dff0f0;
+    }
+
+        .slide h3 {
+            padding-left: 15%;
+            padding-top: 30px;
+        }
+
+        .slide p {
+            padding-left: 15%;
+            padding-top: 15px;
+        }
+
+        .slide a {
+            margin-left: 15%;
+            position: absolute;
+            bottom: 170px;
+        }
+
+    .text-div {
+        display: inline-block;
+        width: 100%;
+        margin-top: 30px;
+        background-color: #1c2e59;
+        height: 230px;
+        opacity: 0.8;
+    }
+    .text-white {
+        color: #dff0f0;
+    }
+
+    .text-black {
+        color: #1c2e59;
+    }
 </style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+
+<div id="carousel" class="carousel slide mt-2" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+            <div class="slide slide1">
+                <div class="text-div">
+                    <h3 class="slide-text">Агрострейч плёнка</h3>
+                    <p>Плёнка предназначена для обмотки тюков сенажа перед длительным хранением</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide slide2">
+                <div class="text-div">
+                    <h3 class="slide-text">Сетка сеновязальная</h3>
+                    <p>Сетка сеновязальная значительно сокращает время на обмотку тюка и эффективно защищает корм от неблагоприятных воздействий природы</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide slide1">
+
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <div style="height: 400px;"></div>

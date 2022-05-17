@@ -67,7 +67,8 @@ footer {
             color: inherit;
         }
 
-            footer .list-group-item > a:hover {
+            footer .list-group-item > a:hover,
+            footer .list-group-item > a:focus {
                 color: #ffb15e;
             }
 
@@ -75,7 +76,8 @@ footer {
     color: #bababa;
 }
 
-    .nav-link:hover {
+    .nav-link:hover,
+    .nav-link:focus {
         color: #ffb15e;
     }
 
@@ -226,3 +228,34 @@ footer {
     background-position: center;
     background-size: cover;
 }
+
+/* List with bullets */
+.list-bullets {
+    list-style: none;
+}
+
+    .list-bullets li {
+        display: flex;
+        align-items: center;
+    }
+
+        .list-bullets li a {
+            text-decoration: none;
+            color: #dff0f0;
+        }
+
+            .list-bullets li a:hover,
+            .list-bullets li a:focus {
+                color: #ffb15e;
+            }
+
+        .list-bullets li::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #5784d7;
+            border: 2px solid #8fb3f5;
+            display: block;
+            margin-right: 1rem;
+        }

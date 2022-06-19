@@ -40,6 +40,11 @@ footer {
     height: fit-content;
 }
 
+footer .container {
+    align-items: center;
+    flex-direction: row;
+}
+
     footer p {
         margin-bottom: 0;
     }
@@ -71,6 +76,18 @@ footer {
             footer .list-group-item > a:focus {
                 color: #ffb15e;
             }
+
+@media (max-width: 768px) {
+    footer .container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    footer p {
+        margin-top: 25px;
+        margin-left: 0;
+    }
+}
 
 .nav-link {
     color: #bababa;
@@ -286,7 +303,6 @@ footer {
             margin-right: 1rem;
         }
 
-
 .slide {
     background-position: center;
     background-size: cover;
@@ -327,4 +343,8 @@ footer {
     .slide a {
         bottom: 140px;
     }
+}
+
+body {
+    background-color: #abc9c9;
 }

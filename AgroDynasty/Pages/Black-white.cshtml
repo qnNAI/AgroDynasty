@@ -1,0 +1,61 @@
+﻿@page
+@model AgroDynasty.Pages.Black_whiteModel
+@{
+    ViewData["Title"] = "Плёнка чёрно-белая";
+}
+
+
+<div class="container">
+    <div class="d-flex product-container">
+       <div class="product-image">
+                <img src="images/plenka-chb.jpg" class="product-img h-img" alt="Плёнка чёрно-белая">
+        </div>
+        <div class="ms-lg-5 w-100">
+            <h3 class="product-title">Чёрно-белая пленка для силосных ям (100-150 мкм)</h3>
+            <hr class="product-descr-line"/>
+           
+            <div class="product-descr" id="descr">
+                <dl>
+                    <dt class="dt"><span>Толщина</span></dt>
+                    <dd><span>100-150мкм</span></dd>
+
+                    <dt class="dt"><span>Производитель</span></dt>
+                    <dd>Германия, РФ</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="mt-5 description-head">
+        <span class="desr-title">Описание</span>
+    </div>
+
+    <div class="description mt-4">
+        <p>
+            Для укрытия хранилищ кормов используется несколько слоев пленки.
+            Перед укрытием черно-белой пленкой рекомендуется использовать вакуумную пленку,
+            которая повышает защиту силоса от проникновения кислорода и дает возможность использовать черно-белую основную пленку многократно.
+        </p>
+
+        <p><b>Черно-белая силосная пленка</b> покрывает верхний слой припасов и обеспечивает оптимальные условия для силосования.</p>
+
+        <p><b>Белый верхний слой</b> пленки защищает силоса от ультрафиолетового излучения и предохраняет его таким образом от перегрева и загнивания.</p>
+
+        <p><b>Черный нижний слой</b> препятствует проникновению света и повышению температуры силоса.</p>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dts = document.getElementsByClassName("dt");
+    let container = document.getElementById("descr");
+    let cont_info = container.getBoundingClientRect();
+    
+        Array.prototype.forEach.call(dts, function(el) {
+            let dd = el.nextElementSibling;
+            el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
+        });
+    });
+
+</script>

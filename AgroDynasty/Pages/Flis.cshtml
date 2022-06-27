@@ -1,0 +1,57 @@
+﻿@page
+@model AgroDynasty.Pages.FlisModel
+@{
+    ViewData["Title"] = "Защитный флис для тюков соломы и сена";
+}
+
+
+<div class="container">
+    <div class="d-flex product-container">
+       <div class="product-image">
+                <img src="images/flis.jpg" class="product-img h-img" alt="Защитный флис для тюков соломы и сена">
+        </div>
+        <div class="ms-lg-5 w-100">
+            <h3 class="product-title">Защитный флис для тюков соломы и сена</h3>
+            <hr class="product-descr-line"/>
+           
+            <div class="product-descr" id="descr">
+                <dl>
+                    <dt class="dt"><span>Производитель</span></dt>
+                    <dd>Германия, Китай</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="mt-5 description-head">
+        <span class="desr-title">Описание</span>
+    </div>
+
+    <div class="description mt-4">
+        <p>
+            Защитный флис не только защищает тюки соломы и сена от ветра и дождя,
+            но также обеспечивает достаточную воздухопроницаемость для предотвращения накопления тепла под флисом.
+            В результате, высокое качество урожая может поддерживаться в течение зимних месяцев, так как быстро высыхает после дождя и снега,
+            что предотвращает образование влаги или плесени на соломе и тюках сена.
+        </p>
+
+        <p>Защитный флис стабилизирован к ультрафиолетовому излучению.</p>
+        <p><b>Срок службы</b> — минимум 5 лет.</p>
+        <p><b>Размеры:</b> 9,8м х 12,5м; 9,8м х 25м; 12м х 25м; 15,6м х 25м.</p>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dts = document.getElementsByClassName("dt");
+    let container = document.getElementById("descr");
+    let cont_info = container.getBoundingClientRect();
+    
+        Array.prototype.forEach.call(dts, function(el) {
+            let dd = el.nextElementSibling;
+            el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
+        });
+    });
+
+</script>

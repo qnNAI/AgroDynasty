@@ -1,0 +1,71 @@
+﻿@page
+@model AgroDynasty.Pages.VacuumModel
+@{
+    ViewData["Title"] = "Вакуумная подкладочная пленка для силоса";
+}
+
+
+<div class="container">
+    <div class="d-flex product-container">
+       <div class="product-image">
+                <img src="images/plenka-v.jpg" class="product-img h-img" alt="Вакуумная подкладочная пленка для силоса">
+        </div>
+        <div class="ms-lg-5 w-100">
+            <h3 class="product-title">Вакуумная подкладочная пленка для силоса</h3>
+            <hr class="product-descr-line"/>
+           
+            <div class="product-descr" id="descr">
+                <dl>
+                    <dt class="dt"><span>Ширина</span></dt>
+                    <dd>12-14-16-18-20-22м</dd>
+
+                    <dt class="dt"><span>Длина</span></dt>
+                    <dd>50м</dd>
+
+                    <dt class="dt"><span>Производитель</span></dt>
+                    <dd>Германия, РФ</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="mt-5 description-head">
+        <span class="desr-title">Описание</span>
+    </div>
+
+    <div class="description mt-4">
+        <p><b>Возможно изготовить полотно по Вашим размерам на заказ</b></p>
+
+        <p>
+            Прозрачная пленка для силосных ям отличается высокой степенью газонепроницаемости.
+            Обычно она используется в качестве дополнительного слоя к обычной пленке плотностью 100-150 мкм.
+            Этот материал, плотно прилипая к силосу, укрывая его словно тончайшей простыней, создает вакуум.
+            Он словно консервирует корм, уменьшая количество проникающего к нему кислорода. Благодаря этому потери скошенных масс сокращаются на 20%.
+        </p>
+
+        <p>
+            Двойная система покрытия гарантирует стопроцентную защиту корма животных от пыли, грязи и опасных выхлопов работающей техники.
+            Скошенная масса сохраняет экологичность, и может безопасно использоваться для питания скота.
+        </p>
+
+        <p>
+            Идеальный кислородный барьер существенно повышает эффективность кормозаготовки и качество силоса.
+            Корм сохраняется в тех объемах, в которых изначально был скошен.
+        </p>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dts = document.getElementsByClassName("dt");
+    let container = document.getElementById("descr");
+    let cont_info = container.getBoundingClientRect();
+    
+        Array.prototype.forEach.call(dts, function(el) {
+            let dd = el.nextElementSibling;
+            el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
+        });
+    });
+
+</script>

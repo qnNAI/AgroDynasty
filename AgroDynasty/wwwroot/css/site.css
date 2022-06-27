@@ -442,3 +442,7 @@ dt span:after {
     font-weight: bold;
     margin-left: 15px;
 }
+
+.description .info li {
+    list-style-image: url(../images/star-fill.svg);
+}

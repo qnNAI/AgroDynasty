@@ -348,3 +348,97 @@ footer .container {
 body {
     background-color: #abc9c9;
 }
+
+.product-image {
+    max-width: 400px;
+}
+
+.product-container {
+    flex-direction: row;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-title {
+    /*  margin-left: 25px;*/
+}
+
+.product-descr {
+    width: 60%;
+}
+
+.product-descr-line {
+    width: 60%;
+    border: 1px solid #1c2e59;
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .product-descr {
+        width: 100%;
+    }
+
+    .product-descr-line {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .product-title {
+        margin-left: 0;
+        margin-top: 25px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+}
+
+dl {
+    display: block;
+}
+
+dt {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: 700;
+    width: 100px;
+}
+
+dd {
+    float: right;
+    width: fit-content;
+    overflow: hidden;
+}
+
+dt span:after {
+    content: " ............................................................................................................................................................";
+    color: #1c2e59;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.desr-title {
+    background-color: #1c2e59;
+    color: #dff0f0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.description-head {
+    border-bottom: 2px solid #1c2e59;
+    padding-bottom: 8px;
+}
+
+.description li {
+    list-style-image: url(../images/check-circle-fill.svg);
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-left: 15px;
+}

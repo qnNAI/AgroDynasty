@@ -1,0 +1,74 @@
+﻿@page
+@model AgroDynasty.Pages.agro_plenkaModel
+@{
+    ViewData["Title"] = "Агро-стрейч плёнка";
+}
+
+
+<div class="container">
+    <div class="d-flex product-container">
+       <div class="product-image">
+                <img src="images/plenka.jpg" class="product-img h-img" alt="Агро-стрейч плёнка">
+        </div>
+        <div class="ms-lg-5 w-100">
+            <h3 class="product-title">Агрострейч плёнка 750мм х 1500м (25мкм)</h3>
+            <hr class="product-descr-line"/>
+           
+            <div class="product-descr" id="descr">
+                <dl>
+                    <dt class="dt"><span>Ширина</span></dt>
+                    <dd>750мм</dd>
+
+                    <dt class="dt"><span>Длина</span></dt>
+                    <dd>1500м</dd>
+
+                    <dt class="dt"><span>Толщина</span></dt>
+                    <dd><span>25мкм</span></dd>
+
+                    <dt class="dt"><span>Производитель</span></dt>
+                    <dd>Германия, Китай</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="mt-5 description-head">
+        <span class="desr-title">Описание</span>
+    </div>
+
+    <div class="description mt-4">
+        <p>Наши стрейч-пленки для сенажа производятся по новой технологии из эластичного полимера, которые при растягивании увеличиваются в три раза
+            и создают необходимые условия для ферментации и обеспечивает уникальные свойства конечного продукта.</p>
+
+            <p><b>Представленные стрейч-пленки обладают:</b></p>
+            <ul>
+                <li>повышенной прочностью и стойкостью к износам</li>
+                <li>низкой проницаемостью кислорода</li>
+                <li>устойчивостью к ультрафиолетовому излучению</li>
+                <li>высокой липкостью</li>
+                <li>высокой эластичностью – растягивается до 300%</li>
+            </ul>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dts = document.getElementsByClassName("dt");
+    let container = document.getElementById("descr");
+    let cont_info = container.getBoundingClientRect();
+    
+        Array.prototype.forEach.call(dts, function(el) {
+            let dd = el.nextElementSibling;
+            el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
+        });
+    });
+
+
+
+
+</script>

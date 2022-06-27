@@ -1,0 +1,85 @@
+﻿@page
+@model AgroDynasty.Pages.MeshkiModel
+@{
+    ViewData["Title"] = "Гравийные мешки и защитная сетка от грызунов и птиц";
+}
+
+
+<div class="container">
+    <div class="d-flex product-container">
+       <div class="product-image">
+                <img src="images/meshki.jpg" class="product-img h-img" alt="Гравийные мешки и защитная сетка от грызунов и птиц">
+        </div>
+        <div class="ms-lg-5 w-100">
+            <h3 class="product-title">Гравийные мешки и защитная сетка от грызунов и птиц</h3>
+            <hr class="product-descr-line"/>
+           
+            <div class="product-descr" id="descr">
+                <dl>
+                    <dt class="dt"><span>Ширина</span></dt>
+                    <dd>25/27см</dd>
+
+                    <dt class="dt"><span>Длина</span></dt>
+                    <dd>100/120см</dd>
+
+                    <dt class="dt"><span>Производитель</span></dt>
+                    <dd>Германия, Китай</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="mt-5 description-head">
+        <span class="desr-title">Описание</span>
+    </div>
+
+    <div class="description mt-4">
+        <p>
+            Гравийные мешки служат для утяжеления и уплотнения покрытия силоса и
+            предлагаются в разных конфигурациях. Мешки изготовлены из
+            высококачественного, не содержащего регенерата сырья.
+        </p>
+        <p>
+            Работа с мешками существенно облегчается за счет опорной манжеты,
+            ручки, петель и стяжной ленты.
+        </p>
+
+        <p>
+            <b>Защитная сетка</b> для силосных траншей обладает антивандальными свойствами: защищает пленку от повреждения птицами, грызунами,
+            градом и т. п. Кроме того обеспечивает дополнительную защиту силоса от проникновения кислорода, предотвращая раздувание пленки.
+            При заборе силоса служит защитой от высыхания верхних слоёв.
+        </p>
+
+        <p>
+            Долговечность и прочность сетки доказана опытным путем. На протяжении 7 лет защитная сетка устойчива к УФ-лучам и,
+            при условии правильного обращения с ней, может использоваться на протяжении многих лет. Высокое качество, гарантия от производителя.
+        </p>
+
+        <p>
+            Защитные сетки – это обязательный компонент современного покрытия силоса.
+            Защитные сетки производятся с различной плотностью плетения и толщиной нити ( вес 1 м2 от 220 гр. до 300 гр).
+        </p>
+
+        <p>Большое количество типоразмеров позволяет оптимально защитить силосную траншею любого размера.</p>
+
+        <p>
+            <b>Размеры:</b> 5 x 9 м / 5 x 10 м /5 x 12 м /5 x 14 м /5 x 16 м/ 5 x 18 м /5 x 20 м /10 x 12 м /10 x 15 м /10 x 16 м /10 x 18 м /10 x 20 м
+            /10 x 25 м /10 x 30 м /10 x 35 м /10 x 40 м /15 x 8 м /15 x 12 м /15 x 18 м
+        </p>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dts = document.getElementsByClassName("dt");
+    let container = document.getElementById("descr");
+    let cont_info = container.getBoundingClientRect();
+    
+        Array.prototype.forEach.call(dts, function(el) {
+            let dd = el.nextElementSibling;
+            el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
+        });
+    });
+
+</script>

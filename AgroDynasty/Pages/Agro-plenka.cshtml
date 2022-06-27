@@ -1,7 +1,7 @@
 ﻿@page
 @model AgroDynasty.Pages.agro_plenkaModel
 @{
-    ViewData["Title"] = "Агро-стрейч плёнка";
+    ViewData["Title"] = "Агрострейч плёнка";
 }
 
 
@@ -51,11 +51,7 @@
     </div>
 </div>
 
-
-
 <script>
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     let dts = document.getElementsByClassName("dt");
@@ -67,8 +63,5 @@ document.addEventListener("DOMContentLoaded", function() {
             el.style.width = `${cont_info.width - dd.getBoundingClientRect().width - 15}px`;
         });
     });
-
-
-
 
 </script>
